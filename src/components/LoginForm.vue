@@ -1,6 +1,6 @@
 <template>
   <div class="login-form">
-    <h5 class="text-center">Vue.js Chatにログイン</h5>
+    <h5 class="text-center">Vue チャットにログイン</h5>
     <hr>
     <!-- イベント修飾子(prevent)によってページのリロードを行わない -->
     <b-form @submit.prevent="onSubmit">
