@@ -16,7 +16,7 @@ const state = {
   loading: false,
   sending: false,
   error: null,
-  user: [],
+  user: null,
   reconnect: false,
   activeRoom: null,
   rooms: [],
