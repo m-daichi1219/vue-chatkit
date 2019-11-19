@@ -20,8 +20,22 @@ export default {
       })
       commit('setReconnect', false)
 
-      // Test state.user
-      console.log(state.user)
+      // ユーザールームリストをストアに保存
+      const rooms = currentUser.rooms.map(room => ({
+        id: room.id,
+        name: room.name
+      }))
+      commit('setRooms', rooms)
+
+      // ユーザーを部屋に登録
+      const activeRoom = state.activeRoom || rooms[0] // 最後または最初に使用した部屋を選択
+      commit('setActiveRoom', {
+        id: activeRoom.id,
+        name: activeRoom.name
+      })
+      await chatkit.subscribeToRoom(activeRoom.id)
+
+      return true
     } catch (error) {
       handleError(commit, error)
     } finally {
