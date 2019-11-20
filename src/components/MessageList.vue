@@ -16,6 +16,11 @@
         </div>
       </div>
     </div>
+    <div class="user-typing">
+      <small class="text-muted" v-if="userTyping">
+        @{{ userTyping }} が入力中...
+      </small>
+    </div>
   </div>
 </template>
 
@@ -26,7 +31,8 @@ export default {
   name: 'message-list',
   computed: {
     ...mapState([
-      'messages'
+      'messages',
+      'userTyping'
     ])
   }  
 }

@@ -5,7 +5,7 @@
     </b-navbar-brand>
     <b-navbar-nav class="ml-auto">
       <b-nav-text>{{ user.name }} | </b-nav-text>
-      <b-nav-item href="#" active>ログアウト</b-nav-item>
+      <b-nav-item href="#" @click="onLogout" active>ログアウト</b-nav-item>
     </b-navbar-nav>
   </b-navbar>
 </template>
